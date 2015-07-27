@@ -32,7 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>MailSim_gray_310h.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -63,31 +64,32 @@
     <Compile Include="MailSimTest.cs" />
     <Compile Include="MailStore.cs" />
     <Compile Include="OLAddressList.cs" />
-    <Compile Include="Operations.cs">
-      <DependentUpon>Operations.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Operations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProviderFactory.cs" />
     <Compile Include="ProvidersOM\AddressBookProviderOM.cs" />
     <Compile Include="ProvidersOM\MailFolderProviderOM.cs" />
     <Compile Include="ProvidersOM\MailItemProviderOM.cs" />
     <Compile Include="ProvidersOM\MailStoreProviderOM.cs" />
-    <Compile Include="Sequence.cs">
-      <DependentUpon>Sequence.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Sequence.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="MailSim\Operations.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MailSim\Sequence.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Operations.xsd">
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Sequence.xsd">
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MailSim\MailSim_gray_310h.ico" />
     <Content Include="MailSim_gray_310h.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
