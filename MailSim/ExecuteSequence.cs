@@ -14,7 +14,6 @@ using System.Xml;
 using Microsoft.Win32;
 using System.Linq;
 
-//using MailSim.OL;
 using MailSim.Contracts;
 
 namespace MailSim
@@ -73,8 +72,6 @@ namespace MailSim
                     }
 
                     // Openes connection to Outlook with default profile, starts Outlook if it is not running
-//                    olConnection = new MailConnection();
-
                     // Note: Currently only the default MailStore is supported.
                     olMailStore = ProviderFactory.CreateMailStore(null);
 
@@ -1030,8 +1027,6 @@ namespace MailSim
         /// <returns>list of mails if successful, null otherwise</returns>
         private IEnumerable<IMailItem> GetMails(string operationName, string folder, string subject)
         {
-//            var mails = new List<IMailItem>();
-
             // retrieves the Outlook folder
             IMailFolder mailFolder = olMailStore.GetDefaultFolder(folder);
             if (mailFolder == null)
@@ -1084,30 +1079,6 @@ namespace MailSim
 
             return subFolders.Where(x => x.Name.Contains(folderName));
         }
-
-#if false
-        /// <summary>
-        /// This method finds all the mails that match the given subject
-        /// </summary>
-        /// <param name="mails">mails to search for</param>
-        /// <param name="subject">subject to match</param>
-        /// <returns>list of matched mails</returns>
-        private List<MailItem> FindMailWithSubject(MailItems mails, string subject)
-        {
-            List<MailItem> matchingMails = new List<MailItem>();
-
-            // loops thru each mail item to find the matching subject ones
-            foreach (MailItem item in mails)
-            {
-                if (string.IsNullOrEmpty(subject) || item.Subject.Contains(subject))
-                {
-                    matchingMails.Add(item);
-                }
-            }
-
-            return matchingMails;
-        }
-#endif
 
         /// <summary>
         /// This method updates the registry to turn on/off Outlook prompts.

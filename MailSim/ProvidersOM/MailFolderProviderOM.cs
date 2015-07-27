@@ -62,9 +62,6 @@ namespace MailSim.ProvidersOM
             _folder.Items.ItemAdd += new Outlook.ItemsEvents_ItemAddEventHandler(Items_ItemAddEvent);
         }
 
-        /// <summary>
-        /// Unregisters event handler previously registered with RegisterItemAddEventHandler
-        /// </summary>
         public void UnRegisterItemAddEventHandler()
         {
             if (_itemAddCallback != null)
