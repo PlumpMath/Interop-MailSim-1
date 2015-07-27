@@ -11,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 using Outlook = Microsoft.Office.Interop.Outlook;
-
+#if false
 namespace MailSim.OL
 {
     /// <summary>
@@ -100,3 +100,4 @@ namespace MailSim.OL
         }
     }
 }
+#endif

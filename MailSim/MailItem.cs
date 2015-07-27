@@ -10,7 +10,7 @@
 using System;
 using System.Collections.Generic;
 using Outlook = Microsoft.Office.Interop.Outlook;
-
+#if false
 namespace MailSim.OL
 {
     public class MailItem
@@ -185,3 +185,4 @@ namespace MailSim.OL
         }
     }
 }
+#endif

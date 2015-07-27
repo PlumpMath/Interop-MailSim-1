@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurationFile.cs" />
+    <Compile Include="Contracts\IAddressBook.cs" />
+    <Compile Include="Contracts\IMailFolder.cs" />
+    <Compile Include="Contracts\IMailItem.cs" />
+    <Compile Include="Contracts\IMailStore.cs" />
     <Compile Include="ExecuteSequence.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="MailConnection.cs" />
@@ -63,6 +67,11 @@
       <DependentUpon>Operations.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderFactory.cs" />
+    <Compile Include="ProvidersOM\AddressBookProviderOM.cs" />
+    <Compile Include="ProvidersOM\MailFolderProviderOM.cs" />
+    <Compile Include="ProvidersOM\MailItemProviderOM.cs" />
+    <Compile Include="ProvidersOM\MailStoreProviderOM.cs" />
     <Compile Include="Sequence.cs">
       <DependentUpon>Sequence.xsd</DependentUpon>
     </Compile>
